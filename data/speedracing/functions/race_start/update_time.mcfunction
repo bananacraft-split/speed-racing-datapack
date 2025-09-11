@@ -1,6 +1,6 @@
-execute store result score C TEMP run time query daytime
-scoreboard players operation C TEMP -= $DAYTIME VAR
-scoreboard players operation C TEMP %= $24000 CONST
+execute store result score D TEMP run time query daytime
+scoreboard players operation C TEMP = $DAYTIME VAR
+scoreboard players operation C TEMP -= D TEMP
 execute if score C TEMP matches 12000.. run time add 12000
 execute if score C TEMP matches 6000..11999 run time add 6000
 execute if score C TEMP matches 3000..5999 run time add 3000
