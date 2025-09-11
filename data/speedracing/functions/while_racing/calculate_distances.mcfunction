@@ -7,6 +7,7 @@ scoreboard players operation @s X *= @e[tag=MyCurrentCheckpoint] X
 scoreboard players operation @s Y *= @e[tag=MyCurrentCheckpoint] Y
 scoreboard players operation @s Y *= @e[tag=MyCurrentCheckpoint] Z
 scoreboard players operation @s DIST = @e[tag=MyCurrentCheckpoint] W
+execute as @e[tag=MyCurrentCheckpoint] run say Hi
 scoreboard players operation @s DIST += @s X
 scoreboard players operation @s DIST += @s Y
 scoreboard players operation @s DIST += @s Z
