@@ -37,8 +37,8 @@ execute as @e[tag=RootEntity,limit=1] at @s run data modify block ~ ~1 ~ Command
 schedule function speedracing:race_start/start_cutscene 24
 schedule function speedracing:race_start/mid_cutscene 64
 
-schedule function speedracing:race_start/end_cutscene 144
-schedule function speedracing:race_start/countdown_three 184
-schedule function speedracing:race_start/countdown_two 204
-schedule function speedracing:race_start/countdown_one 224
-schedule function speedracing:race_start/go 244
+schedule function speedracing:race_start/end_cutscene 224
+schedule function speedracing:race_start/countdown_three 264
+schedule function speedracing:race_start/countdown_two 284
+schedule function speedracing:race_start/countdown_one 304
+schedule function speedracing:race_start/go 324
