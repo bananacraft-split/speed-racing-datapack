@@ -17,7 +17,7 @@ data remove storage var temp_get_track
 execute as @e[tag=RootEntity,limit=1] at @s run summon marker ~ ~ ~ {Tags:["RaceStartTeleportMarker"]}
 execute as @e[tag=RaceStartTeleportMarker,limit=1] run function speedracing:race_start/tp_players_to_track_start
 
-execute store result score $TRACK VAR run data get storage var TrackId
+execute store result score $TRACK VAR run data get storage var Track.id
 execute as @a if score @s TRACK = $TRACK VAR run scoreboard players set @s TRACK 0
 execute as @a[tag=RaceStart] run scoreboard players operation @s TRACK = $TRACK VAR
 title @a[tag=RaceStart] title {"storage": "var","nbt": "Track.Name"}
