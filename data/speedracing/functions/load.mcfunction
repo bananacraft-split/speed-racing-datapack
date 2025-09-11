@@ -7,6 +7,7 @@ scoreboard objectives add VAR dummy
 scoreboard objectives add CONST dummy
 scoreboard objectives add kit dummy
 scoreboard objectives add kitoff dummy
+scoreboard objectives add ID dummy
 scoreboard players set $1 CONST 1
 scoreboard players set $24000 CONST 24000
 
