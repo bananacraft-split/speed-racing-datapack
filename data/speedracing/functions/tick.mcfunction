@@ -1,0 +1,2 @@
+# Kit select
+execute as @e[type=interaction,tag=kit] at @s store success entity @s attack.player[] int 0 on attacker run scoreboard players operation @s kitoff = @e[type=interaction,sort=nearest,distance=..1] kit

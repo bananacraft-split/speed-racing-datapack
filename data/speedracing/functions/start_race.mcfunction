@@ -41,4 +41,4 @@ schedule function speedracing:race_start/end_cutscene 144
 schedule function speedracing:race_start/countdown_three 184
 schedule function speedracing:race_start/countdown_two 204
 schedule function speedracing:race_start/countdown_one 224
-schedule function speedracing:race_start/go 224
+schedule function speedracing:race_start/go 244
