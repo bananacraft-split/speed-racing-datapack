@@ -24,6 +24,8 @@ execute if entity @e[tag=RaceInProgress] run function speedracing:while_racing/c
 # Spectate Target
 tag @a[tag=SpectateTarget,tag=!RaceInProgress] remove SpectateTarget
 execute unless entity @a[tag=SpectateTarget] if entity @a[tag=RaceInProgress] run function speedracing:other/reassign_spectate_target
+execute if entity @a[tag=spec] unless entity @a[tag=SpectateTarget] run tellraw @a[tag=spec] "The race is over, so you have been teleported back to the hub automatically."
+execute if entity @a[tag=spec] unless entity @a[tag=SpectateTarget] as @a[tag=spec] run function speedracing:other/stop_spectating
 
 # Stop when gamemode switch
 execute as @a[tag=spec,gamemode=!spectator] run tag @s remove spec
