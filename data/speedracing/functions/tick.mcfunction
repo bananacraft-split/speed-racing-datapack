@@ -22,7 +22,7 @@ execute as @a[gamemode=!adventure,tag=adv] unless entity @s[tag=RaceStart] unles
 execute if entity @e[tag=RaceInProgress] run function speedracing:while_racing/calculate_positions
 
 # Spectate Target
-tag @a[tag=ST,tag=!RaceInProgress] remove SpectateTarget
+tag @a[tag=SpectateTarget,tag=!RaceInProgress] remove SpectateTarget
 execute unless entity @a[tag=SpectateTarget] if entity @a[tag=RaceInProgress] run function speedracing:other/reassign_spectate_target
 
 # Stop when gamemode switch
