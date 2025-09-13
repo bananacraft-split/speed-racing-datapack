@@ -14,13 +14,13 @@ execute if entity @s[scores={POSITION=2}] run tellraw @a [{"selector":"@s"}," fi
 execute if entity @s[scores={POSITION=3}] run tellraw @a [{"selector":"@s"}," finished in ",{"text":"3rd Place","color":"#835C00"},", after ",{"score":{"name":"@s","objective":"MINUTES2"}},{"score":{"name":"@s","objective":"MINUTES1"}},":",{"score":{"name":"@s","objective":"SECONDS2"}},{"score":{"name":"@s","objective":"SECONDS1"}},":",{"score":{"name":"@s","objective":"PARTIAL2"}},{"score":{"name":"@s","objective":"PARTIAL1"}}]
 execute if entity @s[scores={POSITION=4..}] run tellraw @a [{"selector":"@s"}," finished in ",{"score":{"name":"@s","objective":"POSITION"},"color":"white"},"th Place, after ",{"score":{"name":"@s","objective":"MINUTES2"}},{"score":{"name":"@s","objective":"MINUTES1"}},":",{"score":{"name":"@s","objective":"SECONDS2"}},{"score":{"name":"@s","objective":"SECONDS1"}},":",{"score":{"name":"@s","objective":"PARTIAL2"}},{"score":{"name":"@s","objective":"PARTIAL1"}}]
 
-execute if data storage minecraft:options {200CC:0} at @s as @e[type=minecraft:text_display,tag=lbs] if score @s ID = @p ID if score @s TRACK = @p TRACK if score @s TIME > @p TIME run function speedracing:leaderboard/delete_leaderboard_slow
+execute if data storage minecraft:options {200CC:0} at @s as @e[type=minecraft:text_display,tag=lbs] if score @s ID = @p ID if score @s TRACK = @p TRACK if score @s TIME > @p TIME run function speedracing:zzzprivate/leaderboard/delete_leaderboard_slow
 execute if data storage minecraft:options {200CC:0} at @s as @e[type=minecraft:text_display,tag=lbs] if score @s ID = @p ID if score @s TRACK = @p TRACK if score @s TIME <= @p TIME run tag @p add skip
-execute if data storage minecraft:options {200CC:0} unless entity @s[tag=skip] run function speedracing:leaderboard/make_leaderboard_slow
+execute if data storage minecraft:options {200CC:0} unless entity @s[tag=skip] run function speedracing:zzzprivate/leaderboard/make_leaderboard_slow
 
-execute if data storage minecraft:options {200CC:1} at @s as @e[type=minecraft:text_display,tag=lbf] if score @s ID = @p ID if score @s TRACK = @p TRACK if score @s TIME > @p TIME run function speedracing:leaderboard/delete_leaderboard_fast
+execute if data storage minecraft:options {200CC:1} at @s as @e[type=minecraft:text_display,tag=lbf] if score @s ID = @p ID if score @s TRACK = @p TRACK if score @s TIME > @p TIME run function speedracing:zzzprivate/leaderboard/delete_leaderboard_fast
 execute if data storage minecraft:options {200CC:1} at @s as @e[type=minecraft:text_display,tag=lbf] if score @s ID = @p ID if score @s TRACK = @p TRACK if score @s TIME <= @p TIME run tag @p add skip
-execute if data storage minecraft:options {200CC:1} unless entity @s[tag=skip] run function speedracing:leaderboard/make_leaderboard_fast
+execute if data storage minecraft:options {200CC:1} unless entity @s[tag=skip] run function speedracing:zzzprivate/leaderboard/make_leaderboard_fast
 
 tag @s[tag=skip] remove skip
 gamemode spectator

@@ -6,6 +6,6 @@ execute if entity @s[scores={POS=2..}] at @s as @e[type=marker,tag=LapTime] if s
 
 execute if entity @s[scores={CP=101}] run title @s title "Lap 2"
 execute if entity @s[scores={CP=201}] run title @s title "Final Lap"
-execute if entity @s[scores={CP=101}] run function speedracing:kit/givelap2items
-execute if entity @s[scores={CP=201}] run function speedracing:kit/givelap3items
-execute if entity @s[scores={CP=301}] run function speedracing:while_racing/has_finished
+execute if entity @s[scores={CP=101}] run function speedracing:zzzprivate/kit/givelap2items
+execute if entity @s[scores={CP=201}] run function speedracing:zzzprivate/kit/givelap3items
+execute if entity @s[scores={CP=301}] run function speedracing:zzzprivate/while_racing/has_finished

@@ -1,5 +1,5 @@
 # New Players
-execute as @a unless score @s ID matches 1.. run function speedracing:other/newplayer
+execute as @a unless score @s ID matches 1.. run function speedracing:zzzprivate/other/newplayer
 
 # Update timers
 function speedracing:while_racing/update_timer
@@ -15,17 +15,17 @@ execute if score $CUT2 VAR matches 0..200 run execute as @e[type=minecraft:armor
 execute as @e[type=interaction,tag=kit] at @s store success entity @s attack.player[] int 0 on attacker run scoreboard players operation @s kitoff = @e[type=interaction,sort=nearest,distance=..1] kit
 
 
-execute as @a[gamemode=adventure,tag=!adv] run function speedracing:other/store_items
-execute as @a[gamemode=!adventure,tag=adv] unless entity @s[tag=RaceStart] unless entity @s[tag=spec] run function speedracing:other/fetch_items
+execute as @a[gamemode=adventure,tag=!adv] run function speedracing:zzzprivate/other/store_items
+execute as @a[gamemode=!adventure,tag=adv] unless entity @s[tag=RaceStart] unless entity @s[tag=spec] run function speedracing:zzzprivate/other/fetch_items
 
 # Position calculation
-execute if entity @e[tag=RaceInProgress] run function speedracing:while_racing/calculate_positions
+execute if entity @e[tag=RaceInProgress] run function speedracing:zzzprivate/while_racing/calculate_positions
 
 # Spectate Target
 tag @a[tag=SpectateTarget,tag=!RaceInProgress] remove SpectateTarget
-execute unless entity @a[tag=SpectateTarget] if entity @a[tag=RaceInProgress] run function speedracing:other/reassign_spectate_target
+execute unless entity @a[tag=SpectateTarget] if entity @a[tag=RaceInProgress] run function speedracing:zzzprivate/other/reassign_spectate_target
 execute if entity @a[tag=spec] unless entity @a[tag=SpectateTarget] run tellraw @a[tag=spec] "The race is over, so you have been teleported back to the hub automatically."
-execute if entity @a[tag=spec] unless entity @a[tag=SpectateTarget] as @a[tag=spec] run function speedracing:other/stop_spectating
+execute if entity @a[tag=spec] unless entity @a[tag=SpectateTarget] as @a[tag=spec] run function speedracing:zzzprivate/other/stop_spectating
 
 # Stop when gamemode switch
 execute as @a[tag=spec,gamemode=!spectator] run tag @s remove spec
@@ -39,8 +39,8 @@ execute as @a[tag=spec] run spectate
 execute as @a[tag=spec] run spectate @a[tag=SpectateTarget,limit=1]
 
 # Carrot on stick use
-execute as @a[scores={USES=1..}] run function speedracing:kit/carrot_on_stick_use
+execute as @a[scores={USES=1..}] run function speedracing:zzzprivate/kit/carrot_on_stick_use
 
 # Enderman timer
 execute as @e[type=marker,tag=EnderTP] run scoreboard players remove @s TIME 1
-execute as @e[type=marker,tag=EnderTP,scores={TIME=..0}] run function speedracing:kit/enderman_do_tp
+execute as @e[type=marker,tag=EnderTP,scores={TIME=..0}] run function speedracing:zzzprivate/kit/enderman_do_tp

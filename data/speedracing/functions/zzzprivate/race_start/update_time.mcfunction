@@ -15,4 +15,4 @@ execute if score C TEMP matches 11..22 run time add 11
 execute if score C TEMP matches 5..10 run time add 5
 execute if score C TEMP matches 2..4 run time add 2
 execute if score C TEMP matches 1 run time add 1
-execute unless score C TEMP matches 0 run function speedracing:race_start/update_time
+execute unless score C TEMP matches 0 run function speedracing:zzzprivate/race_start/update_time
