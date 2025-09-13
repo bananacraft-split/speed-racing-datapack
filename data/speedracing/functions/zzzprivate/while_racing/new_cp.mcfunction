@@ -1,4 +1,4 @@
-execute if entity @s[scores={POS=1}] unless entity @e[tag=newlt] run function speedracing:while_racing/summon_new_lap_entity
+execute if entity @s[scores={POS=1}] unless entity @e[tag=newlt] run function speedracing:zzzprivate/while_racing/summon_new_lap_entity
 execute if entity @s[scores={POS=1}] run scoreboard players set @s RTDELTA 0
 
 execute if entity @s[scores={POS=2..}] run scoreboard players operation @s RTDELTA = @s TIME

@@ -2,7 +2,7 @@
 execute as @a unless score @s ID matches 1.. run function speedracing:zzzprivate/other/newplayer
 
 # Update timers
-function speedracing:while_racing/update_timer
+function speedracing:zzzprivate/while_racing/update_timer
 execute if score $CUT VAR matches 0..1000 run scoreboard players add $CUT VAR 1
 execute if score $CUT2 VAR matches 0..1000 run scoreboard players add $CUT2 VAR 1
 
