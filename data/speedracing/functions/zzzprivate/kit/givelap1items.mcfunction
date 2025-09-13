@@ -20,4 +20,4 @@ execute as @e[tag=InteractionEntity,limit=1] at @s run data modify entity @e[typ
 execute as @e[tag=InteractionEntity,limit=1] at @s run data modify entity @e[type=item,limit=1,nbt={Item:{Count:65b}}] Item set from block ~ ~ ~4 Items[{Slot:7b}]
 execute as @e[tag=InteractionEntity,limit=1] at @s run data modify entity @e[type=item,limit=1,nbt={Item:{Count:65b}}] Item set from block ~ ~ ~4 Items[{Slot:8b}]
 kill @e[type=item,nbt={Item:{Count:65b}}]
-tag @e[tag=IE] remove IE
+tag @e[tag=IE] remove InteractionEntity
