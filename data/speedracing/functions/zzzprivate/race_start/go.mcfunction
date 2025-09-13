@@ -8,5 +8,5 @@ execute as @a[tag=RaceStart] run function speedracing:zzzprivate/kit/givelap1ite
 tag @a[tag=RaceStart] add RaceInProgress
 tag @a[tag=RaceStart] remove RaceStart
 
-summon marker ~ ~ ~ {Tags:["MusicMarker"]}
+execute as @e[tag=RootEntity,limit=1] at @s run summon marker ~ ~ ~ {Tags:["MusicMarker"]}
 execute as @e[tag=MusicMarker,limit=1] run function speedracing:zzzprivate/race_start/do_track_music
