@@ -5,4 +5,5 @@ execute as @e[type=interaction,tag=newkit,tag=kit] at @s run tp @s ~ ~0.01 ~
 execute as @e[type=interaction,tag=newkit,tag=kit] store result score @s kit run data get storage var LastKitId
 execute as @e[type=interaction,tag=newkit,tag=kit] run scoreboard players operation @s kit += $1 CONST
 execute as @e[type=interaction,tag=newkit,tag=kit] store result storage var LastKitId int 1 run scoreboard players get @s kit
+execute unless data storage options DefaultKit store result storage options DefaultKit int 1 run scoreboard players get @e[type=interaction,tag=newkit,tag=kit,limit=1] kit
 execute as @e[type=interaction,tag=newkit,tag=kit] run tag @s remove newkit

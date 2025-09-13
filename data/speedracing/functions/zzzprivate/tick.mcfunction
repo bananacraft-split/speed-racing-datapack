@@ -14,7 +14,18 @@ execute if score $CUT2 VAR matches 0..200 run execute as @e[type=minecraft:armor
 # Kit select
 execute as @e[type=interaction,tag=kit] at @s store success entity @s attack.player[] int 0 on attacker run scoreboard players operation @s kitoff = @e[type=interaction,sort=nearest,distance=..1] kit
 
+# Apply speed
+execute if data storage options {200CC:0b} run effect give @a speed 1 10 true
+execute if data storage options {200CC:1b} run effect give @a speed 1 13 true
 
+# Comebacks if needed
+execute if data storage options {Comebacks:1b} run function speedracing:zzzprivate/other/do_comebacks
+
+# Kit apply
+execute if data storage options {Kits:1b} as @a run scoreboard players operation @s kit = @s kitoff
+execute if data storage options {Kits:0b} store result score @a kit run data get storage options DefaultKit
+
+# Item storing
 execute as @a[gamemode=adventure,tag=!adv] run function speedracing:zzzprivate/other/store_items
 execute as @a[gamemode=!adventure,tag=adv] unless entity @s[tag=RaceStart] unless entity @s[tag=spec] run function speedracing:zzzprivate/other/fetch_items
 

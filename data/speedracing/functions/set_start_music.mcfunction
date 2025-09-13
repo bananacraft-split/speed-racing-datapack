@@ -1,0 +1,1 @@
+data modify storage minecraft:options StartMusic set from entity @s SelectedItem

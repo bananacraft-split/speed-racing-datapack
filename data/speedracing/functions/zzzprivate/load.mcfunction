@@ -37,4 +37,4 @@ scoreboard players set $24000 CONST 24000
 
 execute unless data storage options {Loaded:1b} run data merge storage tracks {TrackData:[]}
 execute unless data storage options {Loaded:1b} run data merge storage var {TrackId:1, LastKitId:3, NextCutId:3}
-execute unless data storage options {Loaded:1b} run data merge storage options {Loaded:1b,200CC:0b}
+execute unless data storage options {Loaded:1b} run data merge storage options {Loaded:1b,200CC:0b,Pvp:1b,Comebacks:1b,Kits:1b}
